@@ -1,0 +1,24 @@
+<h2>Enter the url which you want to shorten</h2>
+
+
+<%= form_for(@link) do |f| %>
+  <% if @link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
+
+      <ul>
+      <% @link.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label(:url) %>
+  <%= f.text_field(:url) %>
+
+  <div class="actions">
+    <br/>
+    <%= f.submit %>
+  </div>
+<% end %>
