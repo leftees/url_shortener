@@ -15,7 +15,6 @@ class Api::V1::LinksController < Api::V1::BaseController
 
   def show
     @link
-    render "/api/v1/links/show.json.jbuilder"
   end
 
   def index
