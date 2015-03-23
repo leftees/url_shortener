@@ -12,9 +12,7 @@
     <% @links.each do |link| %>
       <tr>
         <td><%= display_name(link) %></td>
-        <td><%= link_to 'Show', link_path(link) %></td>
-        <td><%= link_to 'Edit', edit_link_path(link) %></td>
-        <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', "/#{link.shortened_url}" %></td>
       </tr>
     <% end %>
   </tbody>
