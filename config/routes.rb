@@ -8,6 +8,16 @@ Rails.application.routes.draw do
 
   get '/links/all', to: 'links#index'
 
+  namespace :api, constraints: { format: 'json' } do
+    namespace :v1 do 
+
+      get '/:shortened_url', to: 'links#show'
+      get '/links/all', to: 'links#index'
+
+      resources :links
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
