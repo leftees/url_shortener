@@ -8,10 +8,6 @@ class Link < ActiveRecord::Base
   private
     def generate_shortened_url
       self.shortened_url = SecureRandom.urlsafe_base64(6).gsub(/-|_/, (97+rand(27)).chr)
-      #  = loop do
-      #   random_short_url = SecureRandom.urlsafe_base64(6).gsub(/-|_/, (97+rand(27)).chr)
-      #   break random_short_url unless UrlShortener.exists?(shortened_url: random_short_url)        
-      # end        
       self.save
     end
 end
