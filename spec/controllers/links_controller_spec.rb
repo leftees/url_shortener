@@ -14,4 +14,14 @@ RSpec.describe LinksController, type: :controller do
       end
     end
   end
+
+  describe '#show' do
+    context "given a user hits a valid shortened uri via a browser" do
+      it "redirects to the original uri with an appropriate redirect response status" do
+        link = FactoryGirl.create(:link, :url => "https://in.yahoo.com/?p=us")
+        get :show, "shortened_url"=> "#{link.shortened_url}"
+        expect(response.status).to eq(302)
+      end
+    end
+  end
 end
