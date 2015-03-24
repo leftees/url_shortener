@@ -1,15 +1,10 @@
 require 'rails_helper'
 
-# Specs in this file have access to a helper object that includes
-# the LinksHelper. For example:
-#
-# describe LinksHelper do
-#   describe "string concat" do
-#     it "concats two strings with spaces" do
-#       expect(helper.concat_strings("this","that")).to eq("this that")
-#     end
-#   end
-# end
 RSpec.describe LinksHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "#display_name" do
+    it "displays the shortened url inclusive of the domain name" do
+      link = FactoryGirl.create(:link, :url => "https://in.yahoo.com/?p=us")
+      expect(helper.display_name(link)).to eq(LinksHelper::BASE_URL + "/" +"#{link.shortened_url}")
+    end
+  end
 end
