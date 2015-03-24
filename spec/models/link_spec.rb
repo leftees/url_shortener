@@ -19,7 +19,7 @@ RSpec.describe Link, type: :model do
 
   describe "#generate_shortened_url" do
     context "given a valid uri" do
-      it "should create a new link record" do
+      it "should create a new link record with a shortened url" do
         expect(SecureRandom).to receive(:urlsafe_base64).with(6).and_return("4RIvCyuA")
         FactoryGirl.create(:link, :url => "https://in.yahoo.com/?p=us")
         expect(Link.first.shortened_url).to eq("4RIvCyuA")
