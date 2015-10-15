@@ -2,6 +2,8 @@
 
 [![Code Climate](https://codeclimate.com/github/boddhisattva/url_shortener/badges/gpa.svg)](https://codeclimate.com/github/boddhisattva/url_shortener)
 
+[![Test Coverage](https://codeclimate.com/github/boddhisattva/url_shortener/badges/coverage.svg)](https://codeclimate.com/github/boddhisattva/url_shortener/coverage)
+
 This is a basic URL Shortener app. This app also exposes an API to create a URL Shortener.
 
 * Ruby and Rails versions used are specified in the Gemfile
